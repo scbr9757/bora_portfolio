@@ -2,7 +2,7 @@ const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImage');
 const closeBtn = document.querySelector('.close')
 
-const images = document.querySelectorAll('.swiper-slide img');
+const images = document.querySelectorAll('.swiper-slide img, .ballet-image img');
 
 images.forEach(image => {
   image.addEventListener('click', e => {
