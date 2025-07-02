@@ -426,7 +426,7 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
   display: flex; justify-content: center; gap: 40px;
 }
 /* pop_area */
-.pop_area { 
+.pop_area { width: 90%;
   text-align: center;
   margin: 150px auto;
 }
@@ -632,14 +632,18 @@ footer p:last-child {margin-top: 10px;}
   .pagination .swiper-pagination-bullet {width: 20px;}
   .pagination {margin-top: 10px;}
 
+  
+  
+  .pop_area .box {display: block;}
+  .pop_area .box div:first-child {margin-bottom: 20px;}
   .pop_area {margin: 100px auto 0;}
   .pop_area_box a {
     width: 90%;
     margin: 0 auto;
     padding: 20px 0;
   }
-  .pop_area_box img {width: 40px;}
-  .pop_area_box p{ font-size: 16px; margin-top: 15px;}
+  .pop_area_box img {width: 30px;}
+  .pop_area_box p{ font-size: 14px; margin-top: 15px;}
 
   footer{font-size: 12px;}
 }
