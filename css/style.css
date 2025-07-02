@@ -422,14 +422,16 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
   transition: 0.3s;
 }
 .close:hover {color: #bbb;}
-
+.pop_area .box {
+  display: flex; justify-content: center; gap: 40px;
+}
 /* pop_area */
 .pop_area { 
   text-align: center;
   margin: 150px auto;
 }
 .pop_area_box a{
-  width: 800px;
+  width: 500px;
   margin: 20px auto;
   padding: 50px 0;
   display: flex;
