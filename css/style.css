@@ -262,7 +262,7 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
 }
 .imweb_area .imweb ul li .box {
   text-align: left; letter-spacing:0.5px;
-  padding: 70px;
+  padding: 50px 20px;
   padding-bottom: 20px;
 }
 .imweb_area .imweb ul li .box .dsc {
