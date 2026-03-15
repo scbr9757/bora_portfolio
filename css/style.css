@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
 @font-face {
     font-family: 'Paperlogy-8ExtraBold';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
@@ -8,7 +9,7 @@
 html{scroll-behavior: smooth;}
 body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;}
 
-#project, #design {
+#project, #design ,#imweb_area, #blog_area{
   scroll-margin-top: 100px; /* 원하는 만큼 여백 (예: 100px) */
 }
 .Qbtn {
@@ -17,34 +18,72 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
   bottom: 100px; right: 50px;
   z-index: 1000;
   text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-  border-radius: 20px;
+  gap: 5px;
 }
 .Qbtn a {
-  padding: 20px 15px;
+  position: relative; 
   background: #ffc8b1;
-  border-bottom: 1px solid #f5f5f5;
-}
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+  rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}         
 .Qbtn a button {
-  background: none; font-family: 'Paperlogy-8ExtraBold';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  background: none;
+  border: none;
+  font-family: 'Paperlogy-8ExtraBold';
   color: #fff;
   cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  white-space: nowrap;
 }
-.Qbtn a:first-child {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-.Qbtn a:last-child {
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-bottom: none;
+.Qbtn .pp_bt {
+  margin-bottom: 40px;
+  background: transparent;
+  position: relative;
+  display: inline-block;
+  box-shadow: none;
 }
 
+.Qbtn .pp_bt button img {
+  width: 110px;
+}
+
+/* 이력서 텍스트 */
+.Qbtn .pp_bt::after {
+  content: "이력서 & 자기소개서";
+  position: absolute;
+  bottom: 150%;
+  left: 30%;
+  transform: translateX(-50%) translateY(10px);
+
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* hover 시 등장 */
+.Qbtn .pp_bt:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
 
 #main {
   position: relative;
   width: 100%; height: 100vh;
-  background: url(../img/main2.png)no-repeat left center / cover;
+  background: url(../img/main.png)no-repeat left center / cover;
 }
 #main .info {
   height: 100vh;  
@@ -65,10 +104,10 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
 }
 #main .info .intro .name {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  font-size: 60px;
-  font-family: 'Paperlogy-8ExtraBold';
+  font-size: 150px;
+  font-family: "Pinyon Script", cursive;
+  /* font-family: 'Paperlogy-8ExtraBold'; */
   letter-spacing: 8px;
   text-shadow: 2px 2px 6px rgba(255, 160, 150, 0.25);
 }
@@ -77,11 +116,11 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
   opacity: 0;
   animation: fadeUpLetter 3s ease-out infinite;
 }
-.delay-1  { animation-delay: 0.05s; color: #FFC8B1;}
-.delay-2  { animation-delay: 0.1s; color: #FFC8B1;}
-.delay-3  { animation-delay: 0.15s; color: #FFC8B1;}
-.delay-4  { animation-delay: 0.2s; color: #FFC8B1;}
-.delay-5  { animation-delay: 0.25s; }
+.delay-1  { animation-delay: 0.05s; color: #c5564a;}
+.delay-2  { animation-delay: 0.1s; color: #c5564a;}
+.delay-3  { animation-delay: 0.15s; color: #c5564a;}
+.delay-4  { animation-delay: 0.2s; color: #c5564a;}
+.delay-5  { animation-delay: 0.25s; color: #c5564a;}
 .delay-6  { animation-delay: 0.3s; }
 .delay-7  { animation-delay: 0.35s; }
 .delay-8  { animation-delay: 0.4s; }
@@ -90,28 +129,51 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
 .delay-11 { animation-delay: 0.55s; }
 .delay-12 { animation-delay: 0.6s; }
 .delay-13 { animation-delay: 0.65s; }
+.delay-14 { animation-delay: 0.7s; }
 
-#main .info .intro .icon{
-  margin:60px auto;
-  overflow: hidden;
-  mask-image: linear-gradient(var(--mask-direction, to right), hsl(0 0% 0% / 0), hsl(0 0% 0% / 1) 20%, hsl(0 0% 0% / 1) 90%, hsl(0 0% 0% / 0));
+#main .info .intro .major {
+  text-align: center;
+  margin-top: 50px;
+  font-weight: 500;
+  color: #666;
+  font-size: 20px;
 }
-#main .info .intro .icon ul {
-  display: flex; gap: 5px;
-  justify-content: space-evenly;
+
+/* about me */
+#about {
+  width: 80%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#about .icon {
+  width: 70%;
+  margin: 100px auto 0;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 90%,
+    hsl(0 0% 0% / 0)
+  );
+}
+#about .icon ul {
+  display: flex;
+  gap: 5px;
   width: max-content;
   animation: scrollLeft 40s linear infinite;
 }
-#main .info .intro .icon ul li{
+#about .icon ul li {
   flex: none;
   margin-right: 30px;
   list-style: none;
 }
-#main .info .intro .icon ul li img{
-  width: 80px;
-}
-#main .info .intro .icon ul .js img {width: 70px;}
-
+#about .icon ul li img {width: 70px;}
+#about .icon ul .js img {width: 60px;}
 @keyframes scrollLeft {
   0% {
     transform: translateX(0%);
@@ -121,148 +183,103 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
   }
 }
 
-#main .info .intro .btn_area {
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-}
-#main .info .intro .btn_area button {
-  font-size: 24px;
-  width: 300px; padding: 15px 0;
-  border-radius: 10px;
-  cursor: pointer;
-  color: #fff;
-  text-shadow: 2px 1px 2px #6d6d6d;
-  font-weight: 600;
-  background: #ffc8b1;
-  letter-spacing: 1.6px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  transition: all 0.2s ease-in-out;
-}
-#main .info .intro .btn_area button:hover {
-  background-color: #f9a187;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-#main .info .intro .major {
-  text-align: center;
-  margin-top: 80px;
-  font-weight: 500;
+#about .about_tit {
+  font-size: 30px;
   color: #444;
+  font-weight: 500;
+  margin-bottom: 80px;
+  text-align: center;
 }
-
-/* about me */
-#about {
-    width: 80%; height: 100vh;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.title {
-    font-family: 'Paperlogy-8ExtraBold';
-    font-size: 60px;
-    letter-spacing: 3px;
-    margin-bottom: 50px;
-    text-align: center;
-    
-}
-#about p {font-size: 28px;color:#222; font-weight:500;}
+#about .about_tit strong {color: #c5564a;}
 #about .me {
-    display: flex;
-    align-items: center;
-    margin: 30px auto 0;
-    padding: 60px 150px;
-    border-radius: 30px;
-    background-color: #FFF7F3;
-}
-#about .me .show {
-    width: 380px; height: 300px;
-    background: url(../img/photo2.png) no-repeat left center / contain;
-}
-#about .me .txt {
-    width: 500px;
-    line-height: 1.5;
-    font-size: 20px;
-    
-}
-
-/* project */
-#project {margin:100px auto;}
-
-/* imweb_area */
-.imweb_area {margin: 100px 0;}
-.imweb_area .imweb ul {
-  display: flex; align-items: center; justify-content: space-evenly;
-  border-radius:10px;
-  padding: 80px 200px;
-  background-color: #FFF7F3;
-}
-.imweb_area .imweb ul li {text-align: center;}
-.imweb_area .imweb ul li > img {
-  width: 750px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  border: 1px solid #eeeeee;
-  background: #fff;
-  padding: 20px;
-}
-.imweb_area .imweb ul li .box {text-align: left; letter-spacing:0.5px}
-.imweb_area .imweb ul li .box .tit{font-size: 24px; margin-bottom: 30px; font-weight: 600;}
-.imweb_area .imweb ul li .box .tit img {width: 120px; margin-right: 10px; vertical-align: middle; }
-.imweb_area .imweb ul li .box h3 {font-size: 32px;}
-.imweb_area .imweb ul li .box .dsc {
-  margin-top: 10px; font-size: 18px; line-height: 1.6;
-  font-weight: 300; color: #222;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-}
-.imweb_area .imweb ul li .box button {
-  width: 220px;
-  position: relative;
-  padding: 10px 30px ; margin-top: 50px;
-  font-size: 16px;
-  background: transparent;
-  transition: all 0.2s ease;
-  border: 1px solid #444;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-}
-.imweb_area .imweb ul li .box button a {
+  width: 1000px;
   display: flex;
   align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  color: inherit;
+  gap: 30px;
+  padding:60px 100px;
+  border-radius: 30px;
+  background-color: #FFF7F3;
 }
-.imweb_area .imweb ul li .box button a img { 
-  position: absolute;
-  right: 40px;
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  transition: all 0.2s ease;
+#about .me .show {
+  width: 380px;
+  height: 300px;
+  background: url(../img/photo2.png) no-repeat left center / contain;
+  flex-shrink: 0;
 }
-.imweb_area .imweb ul li .box button:hover img {
-  position: absolute;
-  right: 30px;
-  transition: all 0.3s ease;
+#about .me .txt {
+  /* width: 500px; */
+  line-height: 1.5;
+  font-size: 20px;
 }
-.imweb_area .imweb ul li .box button:hover {
-  background: #ffc8b1;
-  border: 1px solid #ffc8b1;
-  transition: all 0.3s ease;
+#about .me .txt strong {
+  font-size: 22px;
+  color: #c5564a;
+}
+
+
+/* imweb_area */
+.imweb_area {margin-bottom: 300px;}
+.tit{
+  display: block;
+  font-size: 50px;font-weight: 600; 
+  margin-bottom: 100px; text-align: center;
+}
+.tit img {width: 280px; margin-right: 30px; vertical-align: bottom;}
+.imweb_area .imweb_flex{
+  width: 80%; margin: auto;
+  display: flex; gap: 50px;
+}
+.imweb_area .imweb {width: 50%; transition: transform 0.3s ease;}
+.imweb_area .imweb.active:hover {
+  transform: translateY(-20px);
+}
+.imweb_area .imweb ul {
+  border-radius: 50px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background:#fff;
+  overflow: hidden;
+  padding: 50px;
+}
+.imweb_area .imweb ul li {text-align: center;}
+.imweb_area .imweb ul li .img_scroll {
+  height: 430px;          /* 원하는 높이 */
+  overflow-y: auto;
+
+   /* 스크롤바 숨기기 */
+  -ms-overflow-style: none;  /* IE, Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Chrome, Safari */
+.imweb_area .imweb ul li .img_scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.imweb_area .imweb ul li div > img {
+  width: 100%;
+  background: #fff;
+  cursor: pointer;
+}
+.imweb_area .imweb ul li .box {
+  text-align: left; letter-spacing:0.5px;
+  padding: 70px;
+  padding-bottom: 20px;
+}
+.imweb_area .imweb ul li .box .dsc {
+  font-size: 20px; line-height: 1.4; font-weight: 400; margin-top: 15px; 
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
 /* clone_area */
-.clone_area {width: 80%; margin: auto;}
-.clone_area .clone {margin-top: 50px;}
+.clone_area {width: 80%; margin: auto; margin-bottom: 300px;}
 .clone_area .clone ul {
   display: flex;
-  gap: 60px;
+  gap: 40px;
   flex-wrap: wrap;
 }
 
 .clone_area .clone ul li {
-  width: calc((100% - 120px) / 3);
+  width: calc((100% - 80px) / 3);
   height: auto;
   border-radius: 10px;
   overflow: hidden;
@@ -273,7 +290,7 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
 
 .clone_area .clone ul li img {
   max-width: 100%;
-  height: 300px;
+  height: 350px;
   object-fit: cover;
 }
 
@@ -290,7 +307,6 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
   box-sizing: border-box;
   transition: bottom 0.4s ease;
   gap: 10px;
@@ -301,23 +317,18 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
 }
 
 /* 텍스트 스타일 */
-.clone_area .clone ul li .box p:first-child {
-  font-size: 30px;
-  font-weight: bold;
-}
+.clone_area .clone ul li .box{color: #333;}
+.clone_area .clone ul li .box .clone_tit {font-size: 36px; font-weight: bold;}
+.clone_area .clone ul li .box .sub_tit {font-size: 20px; margin-bottom: 10px;}
 
-.clone_area .clone ul li .box p:last-child {
-  font-size: 14px;
-  opacity: 0.85;
-}
 
 /* 버튼 스타일 */
 .clone_area .clone ul li .box button {
   background: transparent;
   color: #000;
-  border: 1px solid #000;
-  padding: 10px 16px;
-  font-size: 14px;
+  border: 1px solid #888;
+  padding: 14px 30px;
+  font-size: 18px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -348,19 +359,9 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
 
 
 /* blog_area */
-#design {margin:300px auto;}
-.lit {
-  font-family: 'Paperlogy-8ExtraBold';
-  text-align: center; display: block;
-  font-size: 22px; color: #222;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-.click {
-  text-align: center; display: block;
-  margin: 10px 0 35px; color:#444;
-}
-.blog_area {width: 80%; margin: 150px auto;}
+/* #design {margin:300px auto;} */
+.click {display: block; margin: 10px 0 35px; color:#444;}
+.blog_area {width: 80%; margin:0px auto; margin-bottom: 300px;}
 .blog_area .blog ul {
   display: flex; gap: 30px;
   flex-wrap: wrap;
@@ -380,7 +381,7 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
   text-align: center;
 }
 .pagination .swiper-pagination-bullet{
-  background: #000;
+  background: #444;
   border-radius: 0;
   width: 100px; height: 2px;
 }
@@ -406,7 +407,7 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
   margin: auto;
   display: block;
   max-width: 90%;
-  max-height: 80vh; 
+  /* max-height: 90vh;  */
 }
 
 /* 닫기 버튼 스타일 */
@@ -422,45 +423,53 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
   transition: 0.3s;
 }
 .close:hover {color: #bbb;}
-.pop_area .box {
-  display: flex; justify-content: center; gap: 40px;
+
+
+/* PDP_area */
+.PDP_area {width: 80%; margin:0px auto; margin-bottom: 300px;}
+.PDP_area .PDP {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  display: flex; justify-content: center;
+  border-radius: 200px;
 }
-/* pop_area */
-.pop_area { width: 90%;
+.PDP_area .PDP ul {
+  display: flex; gap: 30px; padding: 80px 50px; text-align: center;
+  align-items: center; justify-content: space-between;
+}
+.PDP_area .PDP ul .dsc h2 {
+  font-size: 42px;
+  color: #c5564a; letter-spacing: 1px;
+}
+.PDP_area .PDP ul .dsc p {
+  margin-top: 20px; color: #555;
+}
+.PDP_area .PDP ul .dsc p .dsc_m {display: none;}
+.PDP_area .PDP ul li {
   text-align: center;
-  margin: 150px auto;
+  
 }
-.pop_area_box a{
-  width: 500px;
-  margin: 20px auto;
-  padding: 50px 0;
+.PDP_area .PDP ul li .img_box {
+  width: 150px;height: 150px; background: #fff7f3;
+  border-radius: 500px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #ffc8b1;
-  border-radius: 12px;
-  background: #fff7f3;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  justify-content: center;   /* 가로 가운데 */
+  align-items: center;       /* 세로 가운데 */
+  transition: transform 0.3s ease;
 }
-.pop_area_box a:hover {
-  background: #fff;
-  color: #ffc8b1;
+.PDP_area .PDP ul li .img_box:hover{transform: scale(1.09);}
+.PDP_area .PDP ul li a img {
+  width: 120px;
 }
-.pop_area_box a:hover p {text-decoration:underline;}
-.pop_area_box img {width: 50px;}
-.pop_area_box p {
-  margin-top: 10px;
-  font-size: 17px;
-  font-weight: 500;
-  color: #333;
-  vertical-align: middle;
-}
-.pop_area_box p .arrow {width: 26px; vertical-align: middle;}
+.PDP_area .PDP ul li .box {text-align: left; letter-spacing:0.5px; text-align: center;}
+.PDP_area .PDP ul li .box .lit {font-size:18px; margin-top: 30px; font-weight:600; color: #c5564a;}
+
+
+
 
 /* banner */
+.ballet_area {width: 80%;margin: auto;} 
 .ballet-section {
+  margin-bottom: 300px;
   padding: 80px 0px;
   position: relative;
   background-color: #fff7f3;
@@ -508,6 +517,36 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
 
 
 
+/* active */
+#about .about_tit,
+#about .me, #about .icon,
+.imweb_area .tit,
+.imweb_area .imweb,
+.clone_area .tit,
+.clone_area .clone li,
+.blog_area .tit,
+.blog_area .blog,
+.ballet_area .tit,
+.ballet-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+#about .about_tit.active,
+#about .me.active, #about .icon.active,
+.imweb_area .tit.active,
+.imweb_area .imweb.active,
+.clone_area .tit.active,
+.clone_area .clone li.active,
+.blog_area .tit.active,
+.blog_area .blog.active,
+.ballet_area .tit.active,
+.ballet-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 
 
@@ -521,87 +560,128 @@ footer{
 footer p:last-child {margin-top: 10px;}
 
 
-@media screen and (max-width: 768px) {
-  #main {
-    width: 100%;
-    height: 100%;
-    background: url(../img/main2.png) no-repeat center / cover;
-  }
-  #main .info .intro {width: 90%;}
-  #main .info .intro .name {
-    font-size: 28px;
-    letter-spacing: 4px;
-  }
-  #main .info .intro .icon {margin: 40px auto;}
-  #main .info .intro .icon ul li img {width: 40px;}
-  #main .info .intro .icon ul .js img {width: 30px;}
-  #main .info .intro .btn_area button {
-    font-size: 14px;
-    width: 110px;
-    padding: 25px 0;
-    border-radius: 10px;
-    color: #fff;
-    font-weight: 600;
-    background: #ffc8b1;
-    letter-spacing: 1.6px;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    transition: all 0.2s ease-in-out;
-  }
-  #main .info .intro .major {
-    font-size: 13px;
-    margin-top: 50px;
-  }
+
+
+
+
+
+
+
+
+
+/* Laptop */
+@media (min-width: 1024px) and (max-width: 1536px){
+  #main {background-position: center;}
+  #main .info .intro .name {font-size: 90px;}
+  #main .info .intro .icon ul li img {width: 60px;}
+  #main .info .intro .icon ul li {margin-right: 15px;}
+  #main .info .intro .major {font-size: 16px; margin-top: 50px;}
+  #main .info .intro .icon ul .js img {width: 50px;}
+
+  #about .me {width: 90%; padding: 60px 50px; justify-content: center;}
+  #about .about_tit {font-size: 26px; margin-bottom: 70px;}
+  #about .me .show {width: 300px; height: 300px;}
+  #about .icon {width: 100%; margin: 70px auto 0;}
+  #about .icon ul li {margin-right: 20px;}
+  #about .icon ul li img {width: 60px;}
+  #about .icon ul .js img {width: 50px;}
+  #about .me .txt {font-size: 18px;}
+  #about .me .txt strong {font-size: 20px;}
+
+  .tit {font-size: 40px; margin-bottom: 80px;}
+  .tit img {width:220px ;}
+
+  .imweb_area .imweb ul {padding: 30px;}
+  .imweb_area .imweb ul li .box {padding: 30px 0;}
+  .imweb_area .imweb ul li .box .dsc { font-size: 18px;}
+  .imweb_area .imweb ul li div > img {width: 100%;}
+  .imweb_area .imweb ul li .img_scroll {height: 320px;}
+  .imweb_area .imweb_flex {gap: 20px;}
+
+  .clone_area .clone ul li .box button { padding: 10px 20px; font-size: 16px;}
+
+  .ballet-image img {width: 100%;}
+  .ballet-description {right: 5%; bottom: 3%; padding: 40px;}
+  .ballet-description h2 {font-size: 20px;}
+  
+
+  .PDP_area .PDP {flex-direction: column; padding: 70px 0; border-radius: 50px;}
+  .PDP_area .PDP ul {padding:10px; justify-content: center;}
+  .PDP_area .PDP ul .dsc p {margin-bottom: 50px;}
+  .PDP_area .PDP ul li .img_box {
+    width: 130px;
+    height: 130px;}
+  .PDP_area .PDP ul li a img {width: 100px;}
+}
+
+/* 태블릿, 모바일 */
+@media (max-width: 1023px) {
   .Qbtn {display: none;}
 
-  .title {font-size: 40px; margin: 100px 0 50px;}
-  #about {width: 90%; height: auto;}
-  #about p {font-size: 18px;}
-  #about .me {
-    flex-direction: column;
-    padding: 60px 10px;
+  #main {width: 100%; height: 100%; background: url(../img/main.png) no-repeat center / cover;}
+  #main .info .intro {width: 90%;}
+  #main .info .intro .name {font-size: 54px; letter-spacing: 4px;}
+  #main .info .intro .major {font-size: 13px; padding-top: 30px; margin: 0;} 
+
+  #about .about_tit,
+  #about .me, #about .icon,
+  .imweb_area .tit,
+  .imweb_area .imweb,
+  .clone_area .tit,
+  .clone_area .clone li,
+  .blog_area .tit,
+  .blog_area .blog,
+  .ballet_area .tit,
+  .ballet-section {
+    opacity:1; transform:none;
   }
+
+  #about { width: 100%; margin: 100px 0 120px;height: auto;}
+  #about .about_tit {font-size: 20px; width: 85%; line-height: 1.5;margin-bottom: 30px;}
+  #about .me {width: 90%; flex-direction: column; padding:50px 0; gap: 10px;}
+  #about p {font-size: 18px;}
   #about .me .show {
-    width: 250px;
+    width: 200px;
     aspect-ratio: 5 / 5;
     height: auto;
-    background: url(../img/photo2_m.png) no-repeat left center / contain;
-  }
-  #about .me .txt {font-size: 16px; width: 90%; margin-top: 30px; text-align: center; line-height: 1.8;}
+    background: url(../img/photo2_m.png) no-repeat left center / contain;}
+  #about .me .txt {font-size: 16px; width: 80%; margin-top: 30px; text-align: left; line-height: 1.8;}
+  #about .icon {width: 90%; margin: 30px auto 0;}
+  #about .icon ul li {margin-right: 10px;}
+  #about .icon ul li img {width: 40px;}
+  #about .icon ul .js img {width: 30px;}
 
-  .imweb_area {margin: 0;}
-  .imweb_area .imweb ul {
-    flex-direction: column;
-    padding: 50px 0px;
-    border-radius: 0px;
-    margin-top: 50px;
-    margin-bottom: 100px;
-  }
-  .imweb_area .imweb ul li {width: 90%;}
-  .imweb_area .imweb ul li > img {width: 100%; padding:0; border: none;}
-  .imweb_area .imweb ul li .box .tit {
-    font-size: 18px;
-    margin: 30px 0 20px;
-  }
-  .imweb_area .imweb ul li .box h3 {font-size:24px;}
-  .imweb_area .imweb ul li .box .dsc {font-size: 13px;}
-  .imweb_area .imweb ul li .box button {margin: 30px auto 0;}
-  .lit {margin-top: 30px; font-size: 18px;}
+  .tit img {width: 150px; margin-right: 10px;}
+  .tit {font-size: 30px; margin-bottom: 30px;}
 
-  .clone_area {width: 90%;}
+  .imweb_area {margin-bottom: 100px; width: 90%; margin: auto; margin-bottom: 100px;}
+  .imweb_area .imweb {width: 100%;}
+  .imweb_area .imweb_flex {width: 100%; gap: 20px; flex-direction: column;}
+  .imweb_area .imweb ul {padding: 20px; border-radius: 20px;}
+  .imweb_area .imweb ul li div > img {width: 100%;}
+  .imweb_area .imweb ul li .img_scroll { height: 200px;}
+  .imweb_area .imweb ul li .box {padding: 20px 10px;}
+  .imweb_area .imweb ul li .box h2 {font-size: 20px;}
+  .imweb_area .imweb ul li .box .dsc {font-size: 16px;}
+
+  .clone_area {width: 90%; margin-bottom: 100px;}
   .clone_area .clone ul {flex-direction: column; gap: 30px;}
   .clone_area .clone ul li {width: 100%;}
   .clone_area .clone ul li img {height: 200px;}
-  .clone_area .clone ul li .box{bottom: 0;}
+  .clone_area .clone ul li .box{bottom: 0; background: rgba(255, 255, 255, 0.9);}
+  .clone_area .clone ul li .box .clone_tit {font-size: 26px;}
+  .clone_area .clone ul li .box button {padding: 12px 20px;font-size: 14px;}
+  
+  .blog_area {margin-bottom: 100px; width: 90%;}
+  .blog_area .blog .swiper .swiper-wrapper .swiper-slide img
+  {max-width: 100%; height: 200px; border:1px solid #eeeeee ;}
+  .blog_area .blog .swiper .swiper-wrapper .swiper-slide{width: 500px;}
+  .pagination .swiper-pagination-bullet {width: 20px;}
+  .pagination {margin-top: 10px;}
 
-  #design {margin: 100px auto;}
-  .ballet-section {padding: 30px 0px;}
-  .ballet-wrapper {
-    max-width: 90%;
-  }
-  .ballet-image img {
-    width: 100%;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  }
+  .ballet-section {padding: 30px 0px; margin-bottom: 100px;}
+  .ballet-wrapper {max-width: 90%;}
+  .ballet-image img {width: 100%; box-shadow: 0 10px 20px rgba(0,0,0,0.1);}
   .ballet-image .bn_p {display: none;}
   .ballet-image .bn_m {display: block;}
   .ballet-description {
@@ -611,42 +691,27 @@ footer p:last-child {margin-top: 10px;}
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     margin-top: 10px;
   }
-  .ballet-description h2 {
-    font-size: 18px;
-    padding-top: 25px;
-  }
-  .ballet-description p {
-    font-size: 14px;
-    padding: 0 20px 25px;
-  }
-  .click {font-size: 12px;}
-  .blog_area {margin: 100px auto;}
-  .blog_area .blog .swiper .swiper-wrapper .swiper-slide img {
-    max-width: 100%;
-    height: 200px;
-    border:1px solid #eeeeee ;
-  }
-  .blog_area .blog .swiper .swiper-wrapper .swiper-slide{
-    width: 500px;
-  }
-  .pagination .swiper-pagination-bullet {width: 20px;}
-  .pagination {margin-top: 10px;}
+  .ballet-description h2 {font-size: 18px; padding-top: 25px;}
+  .ballet-description p {font-size: 14px; padding: 0 20px 25px;}
 
-  
-  
-  .pop_area .box {display: block;}
-  .pop_area .box div:first-child {margin-bottom: 20px;}
-  .pop_area {margin: 100px auto 0;}
-  .pop_area_box a {
-    width: 90%;
-    margin: 0 auto;
-    padding: 20px 0;
-  }
-  .pop_area_box img {width: 30px;}
-  .pop_area_box p{ font-size: 14px; margin-top: 15px;}
+  .PDP_area {margin-bottom: 100px; width: 90%;}
+  .PDP_area .PDP {display: block; padding: 50px 0 20px; border-radius: 30px;}
+  .PDP_area .PDP ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding:10px;
+  justify-content: center;
+  gap: 0px;
+}
+  .PDP_area .PDP ul li {width: calc(50% - 10px); margin-bottom: 40px;}
+  .PDP_area .PDP ul .dsc h2 {font-size: 28px;}
+  .PDP_area .PDP ul .dsc p {margin-bottom: 20px; font-size: 14px; line-height: 1.5;}
+  .PDP_area .PDP ul .dsc p .dsc_m{display: block;}
+  .PDP_area .PDP ul li .img_box {width: 114px; height: 114px; margin: auto;}
+  .PDP_area .PDP ul li a img {width: 100px;}
+  .PDP_area .PDP ul li .box .lit {font-size: 16px; margin-top: 26px;}
 
   footer{font-size: 12px;}
 }
 
-
-
+  
