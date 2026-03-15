@@ -441,7 +441,7 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pr
   color: #c5564a; letter-spacing: 1px;
 }
 .PDP_area .PDP ul .dsc p {
-  margin-top: 20px; color: #555;
+  margin-top: 20px; color: #555; font-size: 14px;
 }
 .PDP_area .PDP ul .dsc p .dsc_m {display: none;}
 .PDP_area .PDP ul li {
